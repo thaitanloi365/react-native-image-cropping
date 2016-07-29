@@ -55,7 +55,9 @@ RCT_EXPORT_METHOD(  cropImageWithUrl:(NSString *)imageUrl
     self._resolve = resolve;
     self.aspectRatio = NULL;
     
-    [self.bridge.imageLoader loadImageWithTag:imageUrl callback:^(NSError *error, UIImage *image) {
+    NSURLRequest *imageUrlrequest = [NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]];
+    
+    [self.bridge.imageLoader loadImageWithURLRequest:imageUrlrequest callback:^(NSError *error, UIImage *image) {
         if(error) reject(@"100", @"Failed to load image", error);
         if(image) {
             [self handleImageLoad:image];
@@ -72,8 +74,10 @@ RCT_EXPORT_METHOD(cropImageWithUrlAndAspect:(NSString *)imageUrl
     self._reject = reject;
     self._resolve = resolve;
     self.aspectRatio = aspectRatio;
-
-    [self.bridge.imageLoader loadImageWithTag:imageUrl callback:^(NSError *error, UIImage *image) {
+    
+    NSURLRequest *imageUrlrequest = [NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]];
+    
+    [self.bridge.imageLoader loadImageWithURLRequest:imageUrlrequest callback:^(NSError *error, UIImage *image) {
         if(error) reject(@"100", @"Failed to load image", error);
         if(image) {
             [self handleImageLoad:image];
