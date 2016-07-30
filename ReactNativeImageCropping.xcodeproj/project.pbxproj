@@ -352,6 +352,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/../../node_modules/react-native/React/**",
 					"$(SRCROOT)/../react-native/Libraries/Network/**",
 					"$(SRCROOT)/../react-native/Libraries/Image/**",
 				);
