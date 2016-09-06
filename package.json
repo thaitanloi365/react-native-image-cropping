@@ -7,5 +7,8 @@
   "repository": "meznaric/react-native-image-cropping",
   "dependencies": {
     "TOCropViewController": "git+https://github.com/meznaric/TOCropViewController.git"
+  },
+  "peerDependencies": {
+    "react-native": "^0.28.0"
   }
 }
