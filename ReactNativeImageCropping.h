@@ -1,4 +1,3 @@
-#import "RCTBridgeModule.h"
 #import "TOCropView.h"
 #import <RCTImageLoader.h>
 
